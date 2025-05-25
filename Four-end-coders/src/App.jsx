@@ -1,12 +1,7 @@
 import React from "react";
-import Test from "./components/test.jsx";
 
 function App() {
-  return (
-    <>
-      <Test />
-    </>
-  );
+  return <></>;
 }
 
 export default App;

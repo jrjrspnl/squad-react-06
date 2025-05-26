@@ -1,4 +1,4 @@
-import RedCurtainAddict from "../../assets/image.png";
+import RedCurtainAddict from "../assets/image.png";
 
 const Footer = () => {
     return (

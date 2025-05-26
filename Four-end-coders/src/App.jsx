@@ -1,11 +1,10 @@
 import React from "react";
-import "./App.css";
-import Test from "./components/test.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
     <>
-      <Test />
+      <Footer />
     </>
   );
 }

@@ -1,9 +1,8 @@
 import React from "react";
 import heroLogo from "../assets/logo/thebeatleslogo.png";
 import ticketLogo from "../assets/logo/ticketlogo.png";
-import hamburger from "../assets/logo/hamburger.png";
-import userlogo from "../assets/logo/userlogo.png";
-
+import { IoIosMenu } from "react-icons/io";
+import { RiUserLine } from "react-icons/ri";
 const Navbar = () => {
   return (
     <>
@@ -13,13 +12,13 @@ const Navbar = () => {
           {" "}
           <img src={ticketLogo} alt={ticketLogo} className="mr-5" />
           <p className="text-md font-medium mr-10">Events</p>
-          <div className="flex gap-x-2 bg-[#1E1F22] p-2 rounded-3xl">
-            <img src={hamburger} alt={hamburger} className="p-2" />
-            <img
-              src={userlogo}
-              alt={userlogo}
-              className="bg-[#101010] rounded-2xl p-2"
-            />
+          <div className="flex bg-[#1E1F22] rounded-3xl items-center px-1">
+            <span className="p-2">
+              <IoIosMenu size={30} />
+            </span>
+            <span className="p-2 bg-[#101010] rounded-3xl">
+              <RiUserLine size={20} />
+            </span>
           </div>
         </div>
       </div>

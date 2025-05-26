@@ -6,7 +6,7 @@ import { RiUserLine } from "react-icons/ri";
 const Navbar = () => {
   return (
     <>
-      <div className="w-full flex flex-row justify-between bg-red-500 items-center text-white px-5 md:px-10 py-5">
+      <div className="w-full flex flex-row justify-between items-center text-white px-5 md:px-10 py-5 absolute z-10">
         <img
           src={heroLogo}
           alt={heroLogo}

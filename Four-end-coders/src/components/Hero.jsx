@@ -15,7 +15,7 @@ const Hero = () => {
                   their journey through out the years.{" "}
                 </p>
                 <div className="mt-8 mb-15">
-                  <button className="w-full sm:w-[150px] bg-gradient-to-r from-[#C22026] to-[#C400CB] rounded-3xl py-2">
+                  <button className="w-full sm:w-[150px] bg-gradient-to-r from-[#C22026] to-[#C400CB] rounded-3xl py-2 cursor-pointer">
                     Read more
                   </button>
                 </div>

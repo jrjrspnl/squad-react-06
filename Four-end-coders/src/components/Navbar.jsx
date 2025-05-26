@@ -6,18 +6,28 @@ import { RiUserLine } from "react-icons/ri";
 const Navbar = () => {
   return (
     <>
-      <div className="w-full flex flex-row justify-between bg-red-500 items-center text-white px-10 py-5 cursor-pointer">
-        <img src={heroLogo} alt={heroLogo} className="w-[70px]" />
+      <div className="w-full flex flex-row justify-between bg-red-500 items-center text-white px-5 md:px-10 py-5">
+        <img
+          src={heroLogo}
+          alt={heroLogo}
+          className="w-[50px] md:w-[70px] cursor-pointer"
+        />
         <div className="flex items-center ">
           {" "}
-          <img src={ticketLogo} alt={ticketLogo} className="mr-5" />
-          <p className="text-md font-medium mr-10">Events</p>
+          <img
+            src={ticketLogo}
+            alt={ticketLogo}
+            className="mr-5 hidden sm:block cursor-pointer"
+          />
+          <p className="text-md font-medium mr-10 hidden sm:block cursor-pointer">
+            Events
+          </p>
           <div className="flex bg-[#1E1F22] rounded-3xl items-center px-1">
             <span className="p-2">
-              <IoIosMenu size={30} />
+              <IoIosMenu className="text-2xl sm:text-3xl cursor-pointer" />
             </span>
-            <span className="p-2 bg-[#101010] rounded-3xl">
-              <RiUserLine size={20} />
+            <span className="p-2 bg-[#101010] rounded-3xl cursor-pointer">
+              <RiUserLine className="text-xl " />
             </span>
           </div>
         </div>

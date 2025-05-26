@@ -10,7 +10,7 @@ const Hero = () => {
             <div className="w-full max-w-7xl mx-auto p-4">
               <h1 className="text-4xl font-bold">Interview with the Beatles</h1>
               <div className="mt-4 max-w-md">
-                <p className="text-medium">
+                <p className="text-sm sm:text-medium">
                   1-on-1 interview with the legendary band and an inside look at
                   their journey through out the years.{" "}
                 </p>

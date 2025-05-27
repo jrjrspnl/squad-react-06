@@ -1,4 +1,4 @@
-import RedCurtainAddict from "../assets/image.png";
+import logo from "../assets/logo/thebeatleslogo.png";
 import { FaInstagram } from "react-icons/fa";
 import { SlSocialFacebook } from "react-icons/sl";
 import { RxTwitterLogo } from "react-icons/rx";
@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="text-white flex flex-wrap justify-between gap-8 pb-8">
 
                 <div className="sm:w-auto w-full">
-                    <img src={RedCurtainAddict} alt={RedCurtainAddict} className="w-[64px] h-[48px] mb-4" />
+                    <img src={logo} alt={logo} className="w-[64px] h-[48px] mb-4" />
                 </div>
 
                 <div className="flex flex-col gap-5">

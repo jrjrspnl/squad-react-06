@@ -5,7 +5,7 @@ import ProfileCard from "./ProfileCard.jsx";
 
 export default function NewsPage() {
   return (
-    <div className="bg-black text-white py-6 flex flex-col items-center">
+    <div className="bg-black text-white py-6 px-4 xl:px-0 flex flex-col items-center">
       <div className="lg:w-[75rem] max-w-full">
         <div className="flex mb-8 justify-between flex-wrap">
           <ProfileCard />

@@ -6,14 +6,14 @@ import RightArrow from '../../assets/icon/Group 3543.svg'
 const Broadway = ({ broadway }) => {
   return (
     <>
-      <div className="flex flex-row items-cente justify-between m-5">
+      <div className="flex flex-row items-cente justify-between m-5 px-25">
         <h2 className='text-white'>Broadway</h2>
         <div className="flex gap-2">
           <span><img src={LeftArrow} alt="" /></span>
           <span><img src={RightArrow} alt="" /></span>
         </div>
       </div>
-      <div className="md:flex">
+      <div className="md:flex px-25">
         {broadway.map((broadway) => (
           <div style={{ backgroundColor: "#1E1F22" }} className=" m-5 p-5 flex rounded-xl">
             <img alt={broadway.title} src={broadway.imageUrl} className="h-64 w-64" />
@@ -32,14 +32,14 @@ const Broadway = ({ broadway }) => {
 const Musical = ({ musical }) => {
   return (
     <>
-      <div className="flex flex-row items-cente justify-between m-5">
+      <div className="flex flex-row items-cente justify-between m-5 px-25">
         <h2 className='text-white'>Musical</h2>
         <div className="flex gap-2">
           <span><img src={LeftArrow} alt="" /></span>
           <span><img src={RightArrow} alt="" /></span>
         </div>
       </div>
-      <div className="md:flex">
+      <div className="md:flex px-25">
         {musical.map((musical) => (
           <div style={{ backgroundColor: "#1E1F22" }} className=" m-5 p-5 flex rounded-xl">
             <img alt={musical.title} src={musical.imageUrl} className="h-64 w-64" />
@@ -58,14 +58,14 @@ const Musical = ({ musical }) => {
 const Ballet = ({ ballet }) => {
   return (
     <>
-      <div className="flex flex-row items-cente justify-between m-5">
+      <div className="flex flex-row items-cente justify-between m-5 px-25">
         <h2 className='text-white'>Ballet</h2>
         <div className="flex gap-2">
           <span><img src={LeftArrow} alt="" /></span>
           <span><img src={RightArrow} alt="" /></span>
         </div>
       </div>
-      <div className="md:flex">
+      <div className="md:flex px-25">
         {ballet.map((ballet) => (
           <div style={{ backgroundColor: "#1E1F22" }} className=" m-5 p-5 flex rounded-xl">
             <img alt={ballet.title} src={ballet.imageUrl} className="h-64 w-64" />
@@ -108,7 +108,7 @@ const ArticleComponent = () => {
   return (
     <div style={{ backgroundColor: "#000000" }}>
       <div>
-        <div className="flex justify-between items-center mx-5 pt-2">
+        <div className="flex justify-between items-center mx-5 px-25">
           <h2 className="text-white">Article</h2>
           <select
             className="text-white bg-slate-900 py-2 px-2 border-0"

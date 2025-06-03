@@ -42,19 +42,19 @@ const Broadway = ({broadway}) => {
 const Musical = ({ musical }) => {
   return (
     <>
-   <div className="flex flex-row items-cente justify-between m-5  pt-10">
+     <div className="flex flex-row items-cente justify-between m-5 pt-10">
          <h2 className='text-white text-[24px] font-bold'>Broadway</h2>
          <div className="flex gap-2">
            <span ><img className="h-[48px] w-[48px]" src={LeftArrow} alt="" /></span>
            <span><img className="h-[48px] w-[48px]" src={RightArrow} alt="" /></span>
          </div>
       </div>
-      <div className="">
+      <div className="mt-2 md:flex">
             {musical.map((musical)=> (
-              <div style={{backgroundColor: "#1E1F22"}} className=" m-5 p-5 flex flex rounded-[16px] cursor-pointer hover:opacity-70">
-                <img alt={musical.title} src={musical.imageUrl}  className="h-[15.688rem] w-[15.688rem]" />
-                    <div className="text-white  flex flex-col  ml-[16px]">
-                        <span className="h-[81px] w-[271px] text-[20px] font-medium">{musical.title}</span>
+              <div style={{backgroundColor: "#1E1F22"}} className=" m-5 p-5 flex flex-col md:flex-row rounded-[16px] cursor-pointer hover:opacity-70">
+                <img alt={musical.title} src={musical.imageUrl}  className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]" />
+                    <div className="text-white  flex flex-col mt-5 md:ml-[16px]">
+                        <span className="md:h-[81px] md:w-[271px] md:text-[20px] font-medium">{musical.title}</span>
                         <span className="text-[14px] font-normal mt-[8px]">{musical.description}</span>
                         <div className="text-[14px] font-normal flex flex-col mt-[52px]">
                           <span className="">Publish:</span>
@@ -70,20 +70,20 @@ const Musical = ({ musical }) => {
 }
 const Ballet = ({ballet}) => {
   return(
-   <>
-    <div className="flex flex-row items-cente justify-between m-5  pt-10">
+    <>
+     <div className="flex flex-row items-cente justify-between m-5 pt-10">
          <h2 className='text-white text-[24px] font-bold'>Broadway</h2>
          <div className="flex gap-2">
            <span ><img className="h-[48px] w-[48px]" src={LeftArrow} alt="" /></span>
            <span><img className="h-[48px] w-[48px]" src={RightArrow} alt="" /></span>
          </div>
-    </div>
-    <div className="">
+      </div>
+      <div className="mt-2 md:flex">
             {ballet.map((ballet)=> (
-              <div style={{backgroundColor: "#1E1F22"}} className=" m-5 p-5 flex  rounded-[16px] cursor-pointer hover:opacity-70">
-                <img alt={ballet.title} src={ballet.imageUrl}  className="h-[15.688rem] w-[15.688rem]" />
-                    <div className="text-white  flex flex-col  ml-[16px]">
-                        <span className="h-[81px] w-[271px] text-[20px] font-medium">{ballet.title}</span>
+              <div style={{backgroundColor: "#1E1F22"}} className=" m-5 p-5 flex flex-col md:flex-row rounded-[16px] cursor-pointer hover:opacity-70">
+                <img alt={ballet.title} src={ballet.imageUrl}  className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]" />
+                    <div className="text-white  flex flex-col mt-5 md:ml-[16px]">
+                        <span className="md:h-[81px] md:w-[271px] md:text-[20px] font-medium">{ballet.title}</span>
                         <span className="text-[14px] font-normal mt-[8px]">{ballet.description}</span>
                         <div className="text-[14px] font-normal flex flex-col mt-[52px]">
                           <span className="">Publish:</span>
@@ -92,8 +92,8 @@ const Ballet = ({ballet}) => {
                     </div>
             </div>
             ))}
-    </div>
-   </>
+      </div>
+    </>
   )
 }
 

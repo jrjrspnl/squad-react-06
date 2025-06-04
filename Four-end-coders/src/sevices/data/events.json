@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "category": "broadway",
+    "imageUrl": "src/assets/images/Rectangle 232.png",
+    "title": "An exclusive interview with David Brown - Mr. Piano man",
+    "description": "1-on-1 interview with the legendary band and an inside look at their jouney through the years. A read you won’t want to miss!",
+    "published": "04/18/2021"
+  },
+  {
+    "id": 2,
+    "category": "broadway",
+    "imageUrl": "src/assets/images/Rectangle 238.png",
+    "title": "An exclusive interview with David Brown - Mr. Piano man",
+    "description": "1-on-1 interview with the legendary band and an inside look at their jouney through the years. A read you won’t want to miss!",
+    "published": "04/18/2021"
+  },
+  {
+    "id": 3,
+    "category": "musical",
+    "imageUrl": "src/assets/images/Rectangle 241.png",
+    "title": "An exclusive interview with David Brown - Mr. Piano man",
+    "description": "1-on-1 interview with the legendary band and an inside look at their jouney through the years. A read you won’t want to miss!",
+    "published": "04/18/2021"
+  },
+  {
+    "id": 4,
+    "category": "musical",
+    "imageUrl": "src/assets/images/Rectangle 242.png",
+    "title": "An exclusive interview with David Brown - Mr. Piano man",
+    "description": "1-on-1 interview with the legendary band and an inside look at their jouney through the years. A read you won’t want to miss!",
+    "published": "04/18/2021"
+  },
+  {
+    "id": 5,
+    "category": "ballet",
+    "imageUrl": "src/assets/images/Rectangle 245.png",
+    "title": "An exclusive interview with David Brown - Mr. Piano man",
+    "description": "1-on-1 interview with the legendary band and an inside look at their jouney through the years. A read you won’t want to miss!",
+    "published": "04/18/2021"
+  },
+  {
+    "id": 6,
+    "category": "ballet",
+    "imageUrl": "src/assets/images/Rectangle 246.png",
+    "title": "An exclusive interview with David Brown - Mr. Piano man",
+    "description": "1-on-1 interview with the legendary band and an inside look at their jouney through the years. A read you won’t want to miss!",
+    "published": "04/18/2021"
+  }
+]

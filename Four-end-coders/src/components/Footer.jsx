@@ -6,7 +6,7 @@ import { LiaYoutube } from "react-icons/lia";
 
 const Footer = () => {
     return (
-        <div className="w-full min-h-[294.5px]  pt-[40px] px-20 pb-4 border bg-black flex flex-col justify-evenly">
+        <div className="w-full min-h-[294.5px] pt-[40px] px-20 pb-4 border bg-black flex flex-col justify-evenly">
 
             <div className="text-white flex flex-wrap justify-between gap-8 pb-8">
 

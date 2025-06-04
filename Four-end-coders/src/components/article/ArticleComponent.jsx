@@ -9,17 +9,21 @@ const checkScreen = () => {
    return width < mobileWith
 }
 
-alert(checkScreen())
+const mobileSize = checkScreen();
 const Broadway = ({broadway}) => {
   return(
     <>
-      <div className="flex flex-row items-cente justify-between m-5 pt-10">
+    {/* {!mobileSize && (
+       <div className="flex flex-row items-cente justify-between m-5 pt-10">
          <h2 className='text-white text-[24px] font-bold'>Broadway</h2>
+         
          <div className="flex gap-2">
            <span ><img className="h-[48px] w-[48px]" src={LeftArrow} alt="" /></span>
            <span><img className="h-[48px] w-[48px]" src={RightArrow} alt="" /></span>
          </div>
       </div>
+    )}
+     
       <div className="mt-2 md:flex">
             {broadway.map((broadway)=> (
               <div style={{backgroundColor: "#1E1F22"}} className=" m-5 p-5 flex flex-col md:flex-row rounded-[16px] cursor-pointer hover:opacity-70">
@@ -34,22 +38,37 @@ const Broadway = ({broadway}) => {
                     </div>
             </div>
             ))}
-      </div>
+      </div> */}
     </>
 
   )
 }
 const Musical = ({ musical }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+  if (currentSlide < Math.ceil(musical.length / 2) - 1) {
+    setCurrentSlide(currentSlide + 1);
+  }
+};
+
+const prevSlide = () => {
+  if (currentSlide > 0) {
+    setCurrentSlide(currentSlide - 1);
+  }
+};
   return (
-    <>
-     <div className="flex flex-row items-cente justify-between m-5 pt-10">
-         <h2 className='text-white text-[24px] font-bold'>Broadway</h2>
-         <div className="flex gap-2">
-           <span ><img className="h-[48px] w-[48px]" src={LeftArrow} alt="" /></span>
-           <span><img className="h-[48px] w-[48px]" src={RightArrow} alt="" /></span>
+    <div className='mt-5'>
+      {!mobileSize && (
+        <div className="flex flex-row items-center justify-between bg-red-500">
+         <h2 className='text-white text-[24px] font-bold'>Musical</h2>
+        <div className="flex gap-2">
+           <button onClick={prevSlide} disabled={currentSlide === 0}><img className="h-[48px] w-[48px]" src={LeftArrow} alt="" /></button>
+           <button onClick={nextSlide} disabled={currentSlide >= Math.ceil(musical.length / 2) - 1}><img className="h-[48px] w-[48px]" src={RightArrow} alt="" /></button>
          </div>
       </div>
-      <div className="mt-2 md:flex">
+      )}
+      <div className="mt-2 md:flex overflow-x-visible bg-blue-500"  style={{ transform: `translateX(-${currentSlide * 100}%)`, transition: 'transform 0.5s ease'}}>
             {musical.map((musical)=> (
               <div style={{backgroundColor: "#1E1F22"}} className=" m-5 p-5 flex flex-col md:flex-row rounded-[16px] cursor-pointer hover:opacity-70">
                 <img alt={musical.title} src={musical.imageUrl}  className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]" />
@@ -64,36 +83,54 @@ const Musical = ({ musical }) => {
             </div>
             ))}
       </div>
-    </>
+    </div>
 
   )
 }
 const Ballet = ({ballet}) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+// // Add navigation functions
+// const nextSlide = () => {
+//   if (currentSlide < Math.ceil(ballet.length / 2) - 1) {
+//     setCurrentSlide(currentSlide + 1);
+//   }
+// };
+
+// const prevSlide = () => {
+//   if (currentSlide > 0) {
+//     setCurrentSlide(currentSlide - 1);
+//   }
+// };
   return(
-    <>
-     <div className="flex flex-row items-cente justify-between m-5 pt-10">
-         <h2 className='text-white text-[24px] font-bold'>Broadway</h2>
-         <div className="flex gap-2">
-           <span ><img className="h-[48px] w-[48px]" src={LeftArrow} alt="" /></span>
-           <span><img className="h-[48px] w-[48px]" src={RightArrow} alt="" /></span>
-         </div>
-      </div>
-      <div className="mt-2 md:flex">
-            {ballet.map((ballet)=> (
-              <div style={{backgroundColor: "#1E1F22"}} className=" m-5 p-5 flex flex-col md:flex-row rounded-[16px] cursor-pointer hover:opacity-70">
-                <img alt={ballet.title} src={ballet.imageUrl}  className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]" />
-                    <div className="text-white  flex flex-col mt-5 md:ml-[16px]">
-                        <span className="md:h-[81px] md:w-[271px] md:text-[20px] font-medium">{ballet.title}</span>
-                        <span className="text-[14px] font-normal mt-[8px]">{ballet.description}</span>
-                        <div className="text-[14px] font-normal flex flex-col mt-[52px]">
-                          <span className="">Publish:</span>
-                          <span className="">{ballet.published}</span>
-                        </div>
-                    </div>
-            </div>
-            ))}
-      </div>
-    </>
+    <></>
+    // <div className="mt-5">
+    // {!mobileSize && (
+    //    <div className="md:flex md:flex-row items-center justify-between">
+    //      <h2 className='text-white text-[24px] font-bold'>Ballets</h2>
+    //      <div className="flex gap-2">
+    //        <button onClick={prevSlide} disabled={currentSlide === 0}><img className="h-[48px] w-[48px]" src={LeftArrow} alt="" /></button>
+    //        <button onClick={nextSlide} disabled={currentSlide >= Math.ceil(ballet.length / 2) - 1}><img className="h-[48px] w-[48px]" src={RightArrow} alt="" /></button>
+    //      </div>
+    //   </div>
+    // )}
+    
+    //   <div className="mt-2 overflow-x-visible md:flex bg-red-500" style={{ transform: `translateX(-${currentSlide * 100}%)`, transition: 'transform 0.5s ease'}}>
+    //         {ballet.map((ballet)=> (
+    //           <div style={{backgroundColor: "#1E1F22"}} className="m-5 p-5 md:flex rounded-[16px] cursor-pointer hover:opacity-70 md:w-[588px]">
+    //             <img alt={ballet.title} src={ballet.imageUrl}  className="w-[311px] h-[219.09px] md:h-[251px] md:w-[251px]" />
+    //                 <div className="text-white  flex flex-col mt-5 md:ml-[16px]">
+    //                     <span className="md:h-[81px] text-[] md:w-[271px] lg:text-[20px] font-medium">{ballet.title}</span>
+    //                     <span className="text-[14px] font-normal mt-[8px]">{ballet.description}</span>
+    //                     <div className="text-[14px] font-normal flex flex-col mt-[52px]">
+    //                       <span className="">Publish:</span>
+    //                       <span className="">{ballet.published}</span>
+    //                     </div>
+    //                 </div>
+    //         </div>
+    //         ))}
+    //   </div>
+    // </div>
   )
 }
 
@@ -149,7 +186,7 @@ const ArticleComponent = () => {
                  </select>
        </div>
       </div>
-        <div className="flex flex-col">
+        <div className="md:flex md:flex-col">
           {(filter === 'all' || filter === 'broadway') && <Broadway broadway={broadway}/>}
           {(filter === 'all' || filter === 'musical') && <Musical musical={musical}/>}
           {(filter === 'all' || filter === 'ballet') && <Ballet ballet={ballet}/>}

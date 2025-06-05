@@ -7,6 +7,9 @@ export default {
       fontFamily: {
         'open-sans': ['Open Sans', 'sans-serif'],
       },
+      screens: {
+        'tablet': {'min': '768px', 'max': '1314px'}, // Custom tablet range
+      },
     },
   },
   plugins: [],

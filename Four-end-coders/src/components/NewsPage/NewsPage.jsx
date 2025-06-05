@@ -18,7 +18,7 @@ export default function NewsPage() {
             </date>
           </div>
         </div>
-        <div className="flex flex-wrap gap-32 justify-center">
+        <div className="flex lg:flex-nowrap flex-wrap lg:gap-32 gap-8 justify-center">
           <Article />
           <RelatedArticles />
         </div>

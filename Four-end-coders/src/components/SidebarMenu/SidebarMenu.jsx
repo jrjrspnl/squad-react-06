@@ -2,18 +2,21 @@ import React from "react";
 import { FiSearch, FiHeart, FiStar, FiFilm } from "react-icons/fi";
 import { TbSpeakerphone } from "react-icons/tb";
 
-// prettier-ignore
-const menus = [
+const SidebarMenu = ({ sidebarRef }) => {
+  // prettier-ignore
+  const menus = [
   { id: 1, icon: <FiSearch />, text: "Search Events" },
   { id: 2, icon: <FiHeart />, text: "Follow Art Organizations"},
   { id: 3, icon: <FiStar />, text: "Highlight Video" },
   { id: 4, icon: <TbSpeakerphone />, text: "Latest News" },
   { id: 5, icon: <FiFilm />, text: "Watch" },
-];
+  ];
 
-const SidebarMenu = () => {
   return (
-    <div className="bg-[#1E1F22] text-white w-90 rounded-2xl pt-5 space-y-4 font-sans absolute top-20 right-8">
+    <div
+      ref={sidebarRef}
+      className="bg-[#1E1F22] text-white md:w-90 w-80 rounded-2xl pt-5 space-y-4 font-sans absolute top-20 md:right-8 right-5"
+    >
       <div className="px-5">
         <div className="mb-6">
           <h2 className="text-white font-sans text-base font-semibold leading-normal">
@@ -25,7 +28,7 @@ const SidebarMenu = () => {
         </div>
         <SignInButtons />
       </div>
-      <MenuList />
+      <MenuList menus={menus} />
     </div>
   );
 };
@@ -43,7 +46,7 @@ const SignInButtons = () => {
   );
 };
 
-const MenuList = () => {
+const MenuList = ({ menus }) => {
   return (
     <ul>
       {menus.map((menu) => {
@@ -59,8 +62,12 @@ const MenuList = () => {
 
 const MenuItem = ({ icon, text }) => (
   <div className="flex items-center space-x-3 text-sm cursor-pointer hover:bg-[#0F0F0F] p-3 rounded-xl mx-2 mt-2">
-    <span className="text-white font-sans text-base font-semibold leading-normal">{icon}</span>
-    <p className="text-white font-sans text-base font-medium leading-normal">{text}</p>
+    <span className="text-white font-sans text-base font-semibold leading-normal">
+      {icon}
+    </span>
+    <p className="text-white font-sans text-base font-medium leading-normal">
+      {text}
+    </p>
   </div>
 );
 

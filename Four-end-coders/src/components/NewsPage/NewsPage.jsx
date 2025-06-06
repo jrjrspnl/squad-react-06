@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { getEvents } from "../../services/events"; // adjust if using another data source
+import { getEvents } from "../../services/events";
 import Article from "./Article";
 import RelatedArticles from "./RelatedArticles";
 import ProfileCard from "./ProfileCard";
@@ -9,15 +9,18 @@ export default function NewsPage() {
   const { id } = useParams();
   const [article, setArticle] = React.useState(null);
   const [related, setRelated] = React.useState([]);
+  const [allArticles, setAllArticles] = React.useState([]);
 
   React.useEffect(() => {
     const fetchArticles = async () => {
-      const allArticles = await getEvents(); // or import static data
-      const selected = allArticles.find((a) => String(a.id) === id);
+      const articles = await getEvents();
+      setAllArticles(articles);
+
+      const selected = articles.find((a) => String(a.id) === id);
       setArticle(selected);
 
       if (selected) {
-        const relatedArticles = allArticles.filter(
+        const relatedArticles = articles.filter(
           (a) => a.category === selected.category && String(a.id) !== id
         );
         setRelated(relatedArticles);
@@ -42,7 +45,11 @@ export default function NewsPage() {
 
         <div className="flex lg:flex-nowrap flex-wrap lg:gap-32 gap-8 justify-center">
           <Article article={article} />
-          <RelatedArticles related={related} />
+          <RelatedArticles
+            related={related}
+            allArticles={allArticles}
+            currentArticleId={article.id}
+          />
         </div>
       </div>
     </div>

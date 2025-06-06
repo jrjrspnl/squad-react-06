@@ -42,7 +42,7 @@ const BroadwayCard = ({ title, imageUrl, description, published }) => (
 
 const BroadwayComponent = ({ broadway, loadArticleHeader }) => {
   return (
-    <div className="mt-5">
+    <div className="mt-5 px-20">
       {!mobileSize && (
         <div className="flex flex-row items-center justify-between">
           {loadArticleHeader && (
@@ -60,7 +60,7 @@ const BroadwayComponent = ({ broadway, loadArticleHeader }) => {
           )}
         </div>
       )}
-      <div className="mt-2 flex flex-col md:flex-row  overflow-x-hidden mt-5 md:gap-x-5 ">
+      <div className="flex flex-col md:flex-row border  overflow-x-hidden mt-5 md:gap-x-5 ">
         {broadway.map((broadway) => (
           <MusicalCard key={broadway.id} {...broadway} />
         ))}
@@ -79,7 +79,7 @@ const MusicalCard = ({ title, imageUrl, description, published }) => (
       src={imageUrl}
       className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]"
     />
-    <div className="text-white  flex flex-col mt-5 md:ml-[16px]">
+    <div className="text-white flex flex-col mt-5 md:ml-[16px]">
       <span className="md:h-[5.063rem] md:w-[16.938rem] md:text-[1.25rem] font-medium">
         {title}
       </span>
@@ -98,7 +98,7 @@ const MusicalCard = ({ title, imageUrl, description, published }) => (
 );
 const MusicalComponent = ({ musical, loadArticleHeader }) => {
   return (
-    <div className="mt-5">
+    <div className="mt-5 px-20">
       {!mobileSize && (
         <div className="flex flex-row items-center justify-between">
           {loadArticleHeader && (
@@ -116,7 +116,7 @@ const MusicalComponent = ({ musical, loadArticleHeader }) => {
           )}
         </div>
       )}
-      <div className="mt-2 flex flex-col md:flex-row  overflow-x-hidden mt-5 md:gap-x-5 ">
+      <div className="flex flex-col md:flex-row  overflow-x-hidden mt-5 md:gap-x-5 ">
         {musical.map((musical) => (
           <BroadwayCard key={musical.id} {...musical} />
         ))}
@@ -155,7 +155,7 @@ const BalletCard = ({ title, imageUrl, description, published }) => (
 
 const BalletComponent = ({ ballet, loadArticleHeader }) => {
   return (
-    <div className="mt-5">
+    <div className="mt-5 px-20">
       {!mobileSize && (
         <div className="flex flex-row items-center justify-between">
           {loadArticleHeader && (
@@ -173,7 +173,7 @@ const BalletComponent = ({ ballet, loadArticleHeader }) => {
           )}
         </div>
       )}
-      <div className="mt-2 flex flex-col md:flex-row  overflow-x-hidden mt-5 md:gap-x-5 ">
+      <div className="flex flex-col md:flex-row  overflow-x-hidden mt-5 md:gap-x-5 ">
         {ballet.map((ballet) => (
           <BalletCard key={ballet.id} {...ballet} />
         ))}
@@ -184,13 +184,13 @@ const BalletComponent = ({ ballet, loadArticleHeader }) => {
 // Article Section
 const ArticleSelection = ({ handleCategory }) => {
   return (
-    <div className="py-10">
+    <div className="py-10 px-20">
       <div className="flex justify-between items-center">
         <h2 className="text-white text-[24px] md:text-[32px] font-bold ">
           Articles
         </h2>
         <select
-          className="text-white bg-slate-900 w-[143px] p-[16px] border-0 h-[56px] md:w-[180px] focus:outline-none p-6"
+          className="text-white bg-slate-900 w-[143px] p-[16px] border-0 h-[56px] md:w-[180px] focus:outline-none"
           id="cars"
           onChange={handleCategory}
           style={{ borderRadius: "16px" }}

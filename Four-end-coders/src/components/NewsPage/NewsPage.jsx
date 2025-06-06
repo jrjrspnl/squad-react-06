@@ -5,7 +5,7 @@ import ProfileCard from "./ProfileCard.jsx";
 
 export default function NewsPage() {
   return (
-    <div className="bg-black text-white py-6 flex flex-col items-center">
+    <div className="bg-black text-white py-6 px-20 flex flex-col items-center">
       <div className="lg:w-[75rem] max-w-full">
         <div className="flex mb-8 justify-between flex-wrap">
           <ProfileCard />
@@ -18,7 +18,7 @@ export default function NewsPage() {
             </date>
           </div>
         </div>
-        <div className="flex flex-wrap gap-32 justify-center">
+        <div className="flex gap-32 justify-center">
           <Article />
           <RelatedArticles />
         </div>

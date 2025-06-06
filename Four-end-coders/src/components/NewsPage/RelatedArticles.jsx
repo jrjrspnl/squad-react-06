@@ -19,7 +19,7 @@ export default function RelatedArticles() {
   return (
     <div className="w-96">
       <h3 className="text-white font-sans text-2xl font-bold leading-normal h-[54px] flex flex-col justify-end mb-6">Related articles</h3>
-      <RelatedArticlesList articles={articles}/>
+      <RelatedArticlesList articles={articles} />
     </div>
   );
 }

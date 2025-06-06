@@ -7,7 +7,7 @@ const Hero = () => {
         <img src={heroBg} alt="" className="w-full h-full object-cover " />
         <div className="absolute w-full h-full inset-0 bg-gray-900/30">
           <div className="flex items-end absolute inset-0 bg-gradient-to-b from-transparent to-black/100 ">
-            <div className="lg:w-[75rem] max-w-full mx-0 xl:mx-auto  mb-5 sm:mb-10 p-4 xl:p-0 ">
+            <div className="lg:w-[75rem] max-w-full mx-0 xl:mx-auto  mb-5 sm:mb-10 p-4 xl:p-0 px-40">
               <h1 className="text-4xl font-bold">Interview with the Beatles</h1>
               <div className="mt-4 max-w-md">
                 <p className="text-sm sm:text-medium">

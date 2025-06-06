@@ -15,7 +15,7 @@ const mobileSize = checkScreen();
 const BroadwayCard = ({ title, imageUrl, description, published }) => (
   <div
     style={{ backgroundColor: "#1E1F22" }}
-    className=" p-5 my-5 md:flex rounded-[16px] cursor-pointer hover:opacity-70 overflow-hidden"
+    className=" p-5 my-5 md:flex rounded-[16px] cursor-pointer hover:opacity-70"
   >
     <img
       alt={title}
@@ -42,7 +42,7 @@ const BroadwayCard = ({ title, imageUrl, description, published }) => (
 
 const BroadwayComponent = ({ broadway, loadArticleHeader }) => {
   return (
-    <div className="mt-5 px-20">
+    <div className="mt-5">
       {!mobileSize && (
         <div className="flex flex-row items-center justify-between">
           {loadArticleHeader && (
@@ -60,7 +60,7 @@ const BroadwayComponent = ({ broadway, loadArticleHeader }) => {
           )}
         </div>
       )}
-      <div className="flex flex-col md:flex-row border  overflow-x-hidden mt-5 md:gap-x-5 ">
+      <div className="md:flex mt-5 md:gap-x-5">
         {broadway.map((broadway) => (
           <MusicalCard key={broadway.id} {...broadway} />
         ))}
@@ -98,7 +98,7 @@ const MusicalCard = ({ title, imageUrl, description, published }) => (
 );
 const MusicalComponent = ({ musical, loadArticleHeader }) => {
   return (
-    <div className="mt-5 px-20">
+    <div className="mt-5">
       {!mobileSize && (
         <div className="flex flex-row items-center justify-between">
           {loadArticleHeader && (
@@ -116,7 +116,7 @@ const MusicalComponent = ({ musical, loadArticleHeader }) => {
           )}
         </div>
       )}
-      <div className="flex flex-col md:flex-row  overflow-x-hidden mt-5 md:gap-x-5 ">
+      <div className="md:flex md:gap-x-5 ">
         {musical.map((musical) => (
           <BroadwayCard key={musical.id} {...musical} />
         ))}
@@ -155,7 +155,7 @@ const BalletCard = ({ title, imageUrl, description, published }) => (
 
 const BalletComponent = ({ ballet, loadArticleHeader }) => {
   return (
-    <div className="mt-5 px-20">
+    <div className="mt-5">
       {!mobileSize && (
         <div className="flex flex-row items-center justify-between">
           {loadArticleHeader && (
@@ -173,7 +173,7 @@ const BalletComponent = ({ ballet, loadArticleHeader }) => {
           )}
         </div>
       )}
-      <div className="flex flex-col md:flex-row  overflow-x-hidden mt-5 md:gap-x-5 ">
+      <div className="md:flex md:gap-x-5 ">
         {ballet.map((ballet) => (
           <BalletCard key={ballet.id} {...ballet} />
         ))}
@@ -184,28 +184,28 @@ const BalletComponent = ({ ballet, loadArticleHeader }) => {
 // Article Section
 const ArticleSelection = ({ handleCategory }) => {
   return (
-    <div className="py-10 px-20">
+    <div className="py-10">
       <div className="flex justify-between items-center">
         <h2 className="text-white text-[24px] md:text-[32px] font-bold ">
           Articles
         </h2>
         <select
-          className="text-white bg-slate-900 w-[143px] p-[16px] border-0 h-[56px] md:w-[180px] focus:outline-none"
+          className="text-white w-[143px] p-[16px] border-0 h-[56px] md:w-[180px] focus:outline-none"
           id="cars"
           onChange={handleCategory}
-          style={{ borderRadius: "16px" }}
+          style={{ borderRadius: "16px", backgroundColor: "#1E1F22" }}
         >
           <option className="text-white" value="all">
             All
           </option>
-          <option className="text-white" value="broadway">
-            broadway
+          <option className="text-white" value="Broadway">
+            Broadway
           </option>
-          <option className="text-white" value="musical">
-            musical
+          <option className="text-white" value="Musical">
+            Musical
           </option>
-          <option className="text-white" value="ballet">
-            ballets
+          <option className="text-white" value="Ballet">
+            Ballets
           </option>
         </select>
       </div>
@@ -243,24 +243,27 @@ const ArticleComponent = () => {
     setFilter(e.target.value);
   };
   return (
-    <div style={{ backgroundColor: "#000000" }}>
-      <div className=" px-5 md:px-20 ">
+    <div
+      style={{ backgroundColor: "#000000" }}
+      className="flex justify-center items-center px-5"
+    >
+      <div style={{ width: "1200px" }}>
         <ArticleSelection handleCategory={handleCategory} />
         <div className="flex flex-col">
-          {(filter === "all" || filter === "broadway") && (
+          {(filter === "all" || filter === "Broadway") && (
             <BroadwayComponent
               broadway={broadway}
               loadArticleHeader={loadArticle}
               setFilter={setFilter}
             />
           )}
-          {(filter === "all" || filter === "musical") && (
+          {(filter === "all" || filter === "Musical") && (
             <MusicalComponent
               musical={musical}
               loadArticleHeader={loadArticle}
             />
           )}
-          {(filter === "all" || filter === "ballet") && (
+          {(filter === "all" || filter === "Ballet") && (
             <BalletComponent ballet={ballet} loadArticleHeader={loadArticle} />
           )}
         </div>

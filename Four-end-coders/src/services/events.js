@@ -1,9 +1,9 @@
-import eventsJSON from "../data/events.json";
+import { articles } from "../data/events.js";
 
 export const getEvents = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(eventsJSON);
+      resolve(articles);
     }, 1500);
   });
 };

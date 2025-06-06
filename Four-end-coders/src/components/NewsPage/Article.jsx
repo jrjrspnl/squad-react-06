@@ -1,15 +1,13 @@
 import React from "react";
-import beatlesImg from "../../assets/images/article-1.png";
 
-export default function Article() {
+export default function Article({ article }) {
   return (
     <div className="w-172 flex flex-col gap-8">
       <h1 className="text-white font-open-sans text-4xl font-[700] leading-normal">
-        Interview with the Beatles
+        {article.title}
       </h1>
       <p className="text-white font-open-sans text-xl font-semibold leading-normal">
-        1-on-1 interview with the legendary band and an inside look at their
-        journey throughout the years.
+        {article.description}
       </p>
       <p className="text-white font-open-sans text-base not-italic font-normal leading-normal">
         At vero eos et accusamus et iusto odio dignissimos ducimus qui
@@ -42,11 +40,7 @@ export default function Article() {
           </p>
         </article>
       </div>
-      <img
-        src={beatlesImg}
-        alt="The Beatles"
-        className="rounded-lg"
-      />
+      <img src={article.imageUrl} alt={article.title} className="rounded-lg" />
     </div>
   );
 }

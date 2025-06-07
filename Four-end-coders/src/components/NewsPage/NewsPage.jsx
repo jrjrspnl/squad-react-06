@@ -2,7 +2,7 @@ import React from "react";
 import Article from "./Article.jsx";
 import RelatedArticles from "./RelatedArticles.jsx";
 import ProfileCard from "./ProfileCard.jsx";
-
+import { Link } from "react-router-dom";
 export default function NewsPage() {
   return (
     <div className="bg-black text-white py-6 px-20 flex flex-col items-center">

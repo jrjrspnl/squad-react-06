@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getEvents } from "../../sevices/events.service.js";
 import LeftArrow from "../../assets/icon/Group 3510.svg";
 import RightArrow from "../../assets/icon/Group 3543.svg";
-
+import { Link } from "react-router-dom";
 const checkScreen = () => {
   const width = window.innerWidth;
   const mobileWith = 640;
@@ -13,31 +13,33 @@ const mobileSize = checkScreen();
 
 // Broadway Section
 const BroadwayCard = ({ title, imageUrl, description, published }) => (
-  <div
-    style={{ backgroundColor: "#1E1F22" }}
-    className=" p-5 my-5 md:flex rounded-[16px] cursor-pointer hover:opacity-70"
-  >
-    <img
-      alt={title}
-      src={imageUrl}
-      className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]"
-    />
-    <div className="text-white  flex flex-col mt-5 md:ml-[16px]">
-      <span className="md:h-[5.063rem] md:w-[16.938rem] md:text-[1.25rem] font-medium">
-        {title}
-      </span>
-      <span
-        style={{ color: "#FFFFFF99" }}
-        className="text-[14px] font-normal mt-[8px]"
-      >
-        {description}
-      </span>
-      <div className="text-[14px] font-normal flex flex-col mt-[52px]">
-        <span className="">Publish:</span>
-        <span className="">{published}</span>
+  <Link to="/newspage">
+    <div
+      style={{ backgroundColor: "#1E1F22" }}
+      className=" p-5 my-5 md:flex rounded-[16px] cursor-pointer hover:opacity-70"
+    >
+      <img
+        alt={title}
+        src={imageUrl}
+        className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]"
+      />
+      <div className="text-white  flex flex-col mt-5 md:ml-[16px]">
+        <span className="md:h-[5.063rem] md:w-[16.938rem] md:text-[1.25rem] font-medium">
+          {title}
+        </span>
+        <span
+          style={{ color: "#FFFFFF99" }}
+          className="text-[14px] font-normal mt-[8px]"
+        >
+          {description}
+        </span>
+        <div className="text-[14px] font-normal flex flex-col mt-[52px]">
+          <span className="">Publish:</span>
+          <span className="">{published}</span>
+        </div>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const BroadwayComponent = ({ broadway, loadArticleHeader }) => {
@@ -70,32 +72,35 @@ const BroadwayComponent = ({ broadway, loadArticleHeader }) => {
 };
 // Musical Section
 const MusicalCard = ({ title, imageUrl, description, published }) => (
-  <div
-    style={{ backgroundColor: "#1E1F22" }}
-    className=" p-5 my-5 md:flex rounded-[16px] cursor-pointer hover:opacity-70 overflow-hidden"
-  >
-    <img
-      alt={title}
-      src={imageUrl}
-      className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]"
-    />
-    <div className="text-white flex flex-col mt-5 md:ml-[16px]">
-      <span className="md:h-[5.063rem] md:w-[16.938rem] md:text-[1.25rem] font-medium">
-        {title}
-      </span>
-      <span
-        style={{ color: "#FFFFFF99" }}
-        className="text-[14px] font-normal mt-[8px]"
-      >
-        {description}
-      </span>
-      <div className="text-[14px] font-normal flex flex-col mt-[52px]">
-        <span className="">Publish:</span>
-        <span className="">{published}</span>
+  <Link to="/newspage">
+    <div
+      style={{ backgroundColor: "#1E1F22" }}
+      className=" p-5 my-5 md:flex rounded-[16px] cursor-pointer hover:opacity-70 overflow-hidden"
+    >
+      <img
+        alt={title}
+        src={imageUrl}
+        className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]"
+      />
+      <div className="text-white flex flex-col mt-5 md:ml-[16px]">
+        <span className="md:h-[5.063rem] md:w-[16.938rem] md:text-[1.25rem] font-medium">
+          {title}
+        </span>
+        <span
+          style={{ color: "#FFFFFF99" }}
+          className="text-[14px] font-normal mt-[8px]"
+        >
+          {description}
+        </span>
+        <div className="text-[14px] font-normal flex flex-col mt-[52px]">
+          <span className="">Publish:</span>
+          <span className="">{published}</span>
+        </div>
       </div>
     </div>
-  </div>
+  </Link>
 );
+
 const MusicalComponent = ({ musical, loadArticleHeader }) => {
   return (
     <div className="mt-5">
@@ -126,31 +131,33 @@ const MusicalComponent = ({ musical, loadArticleHeader }) => {
 };
 // BalletSection
 const BalletCard = ({ title, imageUrl, description, published }) => (
-  <div
-    style={{ backgroundColor: "#1E1F22" }}
-    className=" p-5 my-5 md:flex rounded-[16px] cursor-pointer hover:opacity-70 overflow-hidden"
-  >
-    <img
-      alt={title}
-      src={imageUrl}
-      className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]"
-    />
-    <div className="text-white  flex flex-col mt-5 md:ml-[16px]">
-      <span className="md:h-[5.063rem] md:w-[16.938rem] md:text-[1.25rem] font-medium">
-        {title}
-      </span>
-      <span
-        style={{ color: "#FFFFFF99" }}
-        className="text-[14px] font-normal mt-[8px]"
-      >
-        {description}
-      </span>
-      <div className="text-[14px] font-normal flex flex-col mt-[52px]">
-        <span className="">Publish:</span>
-        <span className="">{published}</span>
+  <Link to="/newspage">
+    <div
+      style={{ backgroundColor: "#1E1F22" }}
+      className=" p-5 my-5 md:flex rounded-[16px] cursor-pointer hover:opacity-70 overflow-hidden"
+    >
+      <img
+        alt={title}
+        src={imageUrl}
+        className="h-[219.09px] w-[311px] md:h-[251px] md:w-[251px]"
+      />
+      <div className="text-white  flex flex-col mt-5 md:ml-[16px]">
+        <span className="md:h-[5.063rem] md:w-[16.938rem] md:text-[1.25rem] font-medium">
+          {title}
+        </span>
+        <span
+          style={{ color: "#FFFFFF99" }}
+          className="text-[14px] font-normal mt-[8px]"
+        >
+          {description}
+        </span>
+        <div className="text-[14px] font-normal flex flex-col mt-[52px]">
+          <span className="">Publish:</span>
+          <span className="">{published}</span>
+        </div>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const BalletComponent = ({ ballet, loadArticleHeader }) => {

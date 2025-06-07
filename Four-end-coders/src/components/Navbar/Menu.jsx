@@ -4,12 +4,11 @@ import { FaRegHeart } from "react-icons/fa6";
 import { FaRegStar } from "react-icons/fa";
 import { VscMegaphone } from "react-icons/vsc";
 import { ImFilm } from "react-icons/im";
-import { IoMdClose } from "react-icons/io"; // Close icon
+import { IoMdClose } from "react-icons/io";
 
 export const Menu = ({ onClose }) => {
   return (
     <div className="flex flex-col sm:w-[350px] w-full bg-[#292B31] text-white h-screen relative">
-      {/* Heading with close icon beside it */}
       <div className="p-4 flex justify-between items-center">
         <div>
           <h1 className="font-semibold mb-1">Create your account!</h1>

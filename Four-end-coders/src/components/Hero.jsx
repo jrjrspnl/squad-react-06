@@ -4,10 +4,10 @@ const Hero = () => {
   return (
     <>
       <div className="w-full h-screen relative text-white">
-        <img src={heroBg} alt="" className="w-full h-full object-cover " />
+        <img src={heroBg} alt="" className="w-full h-full object-cover" />
         <div className="absolute w-full h-full inset-0 bg-gray-900/30">
           <div className="flex items-end absolute inset-0 bg-gradient-to-b from-transparent to-black/100 ">
-            <div className="lg:w-[75rem] w-full mx-auto pb-12 px-4 xl:px-0">
+            <div className="lg:w-[75rem] w-full mx-auto pb-0 md:pb-5 px-4 xl:px-0">
               <h1 className="text-4xl font-bold">Interview with the Beatles</h1>
               <div className="mt-4 max-w-md">
                 <p className="text-sm sm:text-medium">

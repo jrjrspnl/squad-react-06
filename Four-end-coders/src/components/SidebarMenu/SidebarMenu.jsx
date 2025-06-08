@@ -1,15 +1,40 @@
 import React from "react";
 import { FiSearch, FiHeart, FiStar, FiFilm } from "react-icons/fi";
 import { TbSpeakerphone } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
+import { getEvents } from "../../services/events";
 
 const SidebarMenu = ({ sidebarRef }) => {
+  const navigate = useNavigate();
+
+  const handleLatestNewsClick = async () => {
+    try {
+      const articles = await getEvents();
+      const sorted = [...articles].sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+      const latest = sorted[0];
+
+      if (latest) {
+        navigate(`/article/${latest.id}`);
+      }
+    } catch (error) {
+      console.error("Failed to navigate to latest news:", error);
+    }
+  };
+
   // prettier-ignore
   const menus = [
-  { id: 1, icon: <FiSearch />, text: "Search Events" },
-  { id: 2, icon: <FiHeart />, text: "Follow Art Organizations"},
-  { id: 3, icon: <FiStar />, text: "Highlight Video" },
-  { id: 4, icon: <TbSpeakerphone />, text: "Latest News" },
-  { id: 5, icon: <FiFilm />, text: "Watch" },
+    { id: 1, icon: <FiSearch />, text: "Search Events" },
+    { id: 2, icon: <FiHeart />, text: "Follow Art Organizations" },
+    { id: 3, icon: <FiStar />, text: "Highlight Video" },
+    {
+      id: 4,
+      icon: <TbSpeakerphone />,
+      text: "Latest News",
+      onClick: handleLatestNewsClick, // Add the handler here
+    },
+    { id: 5, icon: <FiFilm />, text: "Watch" },
   ];
 
   return (
@@ -52,7 +77,11 @@ const MenuList = ({ menus }) => {
       {menus.map((menu) => {
         return (
           <li key={menu.id} className="border-t-[1px] border-t-[#101010] pb-2">
-            <MenuItem icon={menu.icon} text={menu.text}></MenuItem>
+            <MenuItem
+              icon={menu.icon}
+              text={menu.text}
+              onClick={menu.onClick}
+            ></MenuItem>
           </li>
         );
       })}
@@ -60,8 +89,11 @@ const MenuList = ({ menus }) => {
   );
 };
 
-const MenuItem = ({ icon, text }) => (
-  <div className="flex items-center space-x-3 text-sm cursor-pointer hover:bg-[#0F0F0F] p-3 rounded-xl mx-2 mt-2">
+const MenuItem = ({ icon, text, onClick }) => (
+  <div
+    className="flex items-center space-x-3 text-sm cursor-pointer hover:bg-[#0F0F0F] p-3 rounded-xl mx-2 mt-2"
+    onClick={onClick}
+  >
     <span className="text-white font-sans text-base font-semibold leading-normal">
       {icon}
     </span>

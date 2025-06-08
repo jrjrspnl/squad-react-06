@@ -35,8 +35,7 @@ const Articles = () => {
       : articles.filter((section) => section.category === selectedCategory);
 
   const categories = ["All", ...[...new Set(articles.map((a) => a.category))]];
-
-  // ✅ FIXED: Pass actual filteredArticles to groupArticlesByCategory
+  
   const groupedArticles = groupArticlesByCategory(filteredArticles);
 
   return (

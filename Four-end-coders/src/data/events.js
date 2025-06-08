@@ -1,9 +1,12 @@
 import Broadway1 from "../assets/images/Broadway1.png";
 import Broadway2 from "../assets/images/Broadway2.png";
+import Broadway3 from "../assets/images/Broadway3.jpg";
 import Musicals1 from "../assets/images/Musicals1.png";
 import Musicals2 from "../assets/images/Musicals2.png";
+import Musicals3 from "../assets/images/Musicals3.jpg";
 import Ballet1 from "../assets/images/Ballet1.png";
 import Ballet2 from "../assets/images/Ballet2.png";
+import Ballet3 from "../assets/images/Ballet3.jpg";
 
 export const articles = [
   {
@@ -30,7 +33,7 @@ export const articles = [
     description:
       "A celebration of the most memorable Broadway performances since 2010.",
     date: "09/10/2021",
-    imageUrl: Broadway1,
+    imageUrl: Broadway3,
     category: "Broadway",
   },
   {
@@ -56,7 +59,7 @@ export const articles = [
     description:
       "An exploration of emotional storytelling through song and dance.",
     date: "11/08/2022",
-    imageUrl: Musicals2,
+    imageUrl: Musicals3,
     category: "Musicals",
   },
   {
@@ -81,7 +84,7 @@ export const articles = [
     title: "Young Stars of Ballet: The Next Generation",
     description: "Meet the rising talents shaping the future of ballet.",
     date: "08/18/2022",
-    imageUrl: Ballet1,
+    imageUrl: Ballet3,
     category: "Ballet",
   },
 ];

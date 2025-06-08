@@ -35,7 +35,7 @@ const Articles = () => {
       : articles.filter((section) => section.category === selectedCategory);
 
   const categories = ["All", ...[...new Set(articles.map((a) => a.category))]];
-  
+
   const groupedArticles = groupArticlesByCategory(filteredArticles);
 
   return (
@@ -80,7 +80,11 @@ function groupArticlesByCategory(articles) {
 
   return Object.entries(grouped).map(([category, articles]) => ({
     category,
-    articles,
+    articles: articles.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB - dateA; // sort descending
+    }),
   }));
 }
 

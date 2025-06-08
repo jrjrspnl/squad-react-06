@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function RelatedArticleCard({ article }) {
   return (
     <Link to={`/article/${article.id}`}>
-      <div className="bg-[#1E1F22] p-3 rounded-lg overflow-hidden shadow-lg flex sm:flex-row flex-col gap-3 justify-center items-center hover:bg-[#2a2b30] transition-colors">
+      <div className="bg-[#1E1F22] p-3 rounded-lg overflow-hidden shadow-lg flex sm:flex-row flex-col gap-3 justify-center hover:bg-[#2a2b30] transition-colors">
         <img
           src={article.imageUrl}
           alt={article.title}

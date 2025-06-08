@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import heroLogo from "../assets/logo/thebeatleslogo.png";
 import ticketLogo from "../assets/logo/ticketlogo.png";
 import { IoIosMenu } from "react-icons/io";
@@ -7,6 +7,27 @@ import SidebarMenu from "./SidebarMenu/SidebarMenu";
 
 const Navbar = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const sidebarRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setIsSideBarOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isSideBarOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSideBarOpen]);
+
   return (
     <div className="w-full flex flex-row justify-between items-center text-white px-5 md:px-8 py-5 absolute z-10">
       <Logo />
@@ -21,7 +42,7 @@ const Navbar = () => {
         </p>
         <HamburgerMenu setIsSideBarOpen={setIsSideBarOpen} />
       </div>
-      {isSideBarOpen && <SidebarMenu />}
+      {isSideBarOpen && <SidebarMenu sidebarRef={sidebarRef} />}
     </div>
   );
 };

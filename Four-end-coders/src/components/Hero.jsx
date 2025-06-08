@@ -1,25 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation, matchPath } from "react-router-dom";
 import heroBg from "../assets/images/thebeatles.jpg";
+import CategoryButtons from "./NewsPage/CategorySearch";
+import ReadMore from "./ReadMore";
+import { getEvents } from "../services/events";
+
 const Hero = () => {
+  const location = useLocation();
+  const match = matchPath("/article/:id", location.pathname);
+  const isNewsPage = !!match;
+  const articleId = match?.params?.id;
+
+  const [allArticles, setAllArticles] = useState([]);
+  const [currentArticleId, setCurrentArticleId] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (isNewsPage && articleId) {
+        setLoading(true);
+        try {
+          const articles = await getEvents();
+          setAllArticles(articles);
+          const current = articles.find((a) => String(a.id) === articleId);
+          if (current) {
+            setCurrentArticleId(current.id);
+          }
+        } catch (error) {
+          console.error("Failed to fetch articles:", error);
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchData();
+  }, [isNewsPage, articleId]);
+
   return (
     <div className="w-full h-screen relative text-white">
-      <img src={heroBg} alt="" className="w-full h-full object-cover " />
+      <img src={heroBg} alt="" className="w-full h-full object-cover" />
       <div className="absolute w-full h-full inset-0 bg-gray-900/30">
-        <div className="flex w-full h-full items-end justify-center inset-0 bg-gradient-to-b from-transparent to-black/100 ">
-          <div className="w-[1200px] p-4 xl:px-0">
-            <h1 className="text-4xl font-bold">Interview with the Beatles</h1>
-            <div className="mt-4 max-w-md">
-              <p className="text-sm sm:text-medium">
-                1-on-1 interview with the legendary band and an inside look at
-                their journey through out the years.{" "}
-              </p>
-              <div className="mt-8 mb-15">
-                <button className="w-full sm:w-[150px] bg-gradient-to-r from-[#C22026] to-[#C400CB] hover:bg-gradient-to-r hover:from-[#C400CB] hover:to-[#C400CB] rounded-3xl py-3 cursor-pointer">
-                  Read more
-                </button>
-              </div>
+        <div className="flex w-full h-full items-end justify-center inset-0 bg-gradient-to-b from-transparent to-black/100">
+          {isNewsPage ? (
+            <div className="flex w-[1200px] h-full pb-9 inset-0 items-end">
+              {loading ? (
+                <></>
+              ) : (
+                <CategoryButtons
+                  allArticles={allArticles}
+                  currentArticleId={currentArticleId}
+                />
+              )}
             </div>
-          </div>
+          ) : (
+            <ReadMore />
+          )}
         </div>
       </div>
     </div>

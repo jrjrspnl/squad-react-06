@@ -1,25 +1,24 @@
-import React from 'react';
-import beatlesImg from '../../assets/images/related-1.png'; // Replace with real paths
-import stageImg from '../../assets/images/related-2.png';
-import davidImg from '../../assets/images/related-3.png';
-import crowdImg from '../../assets/images/related-4.png';
-import beatles2Img from '../../assets/images/related-5.png';
-import RelatedArticlesList from './RelatedArticlesList.jsx';
+import React from "react";
+import RelatedArticlesList from "./RelatedArticlesList";
 
+export default function RelatedArticles({ related, allArticles, currentArticleId }) {
+  // Exclude current article and related articles from fallback
+  const relatedIds = related.map((a) => a.id);
+  const excludedIds = new Set([...relatedIds, currentArticleId]);
 
-const articles = [
-  { title: "An exclusive interview with David Brown - Mr. Piano man", image: beatlesImg },
-  { title: "An exclusive interview with David Brown - Mr. Piano man", image: stageImg },
-  { title: "An exclusive interview with David Brown - Mr. Piano man", image: davidImg },
-  { title: "An exclusive interview with David Brown - Mr. Piano man", image: crowdImg },
-  { title: "An exclusive interview with David Brown - Mr. Piano man", image: beatles2Img },
-];
+  // Filter fallback articles
+  const fallback = allArticles
+    .filter((a) => !excludedIds.has(a.id))
+    .slice(0, 5 - related.length); // only fill up to 5
 
-export default function RelatedArticles() {
+  const finalSuggestions = [...related, ...fallback];
+
   return (
     <div className="w-96">
-      <h3 className="text-white font-sans text-2xl font-bold leading-normal h-[54px] flex flex-col justify-end mb-6">Related articles</h3>
-      <RelatedArticlesList articles={articles}/>
+      <h3 className="text-white font-sans text-2xl font-bold leading-normal h-[54px] flex flex-col justify-end mb-6">
+        Related Articles
+      </h3>
+      <RelatedArticlesList articles={finalSuggestions} />
     </div>
   );
 }
